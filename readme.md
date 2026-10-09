@@ -34,7 +34,7 @@
 ### Блок-схема
 ![Блок-схема алгоритма](lab_4_schema.png) 
 
-
+https://github.com/stzraw/lab-4-VSTU-HW/blob/main/lab_4_schema.png
 
 ## 2. Реализация программы
 
