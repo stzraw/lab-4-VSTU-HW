@@ -2,31 +2,38 @@
 #include <stdlib.h>
 #include <locale.h>
 
-int task1(void);
-int task2(void);
-int task3(void);
+int task1();
+int task2();
+int task3();
 
-int main(void) 
+int main() 
 {
     setlocale(LC_ALL, ".UTF8");
     task1();
     task2();
     task3();
+    
     return 0;
 }
 
-int task1(void)
+int task1()
 {
     char c = '!';
     int i = 2;
     float f = 3.14f;
     double d = 5e-12;
 
+    double num;
+    int osn;
+    double ost;
+    char ch;
+    double res;
+
     printf("Исходные значения\n");
     printf("char c   = %c\n", c);
     printf("int i    = %d\n", i);
     printf("float f  = %f\n", f);
-    printf("double d = %le\n\n", d);
+    printf("double d = %le\n", d);
 
     printf("Ввод новых значений\n");
     printf("Введите символ: ");
@@ -40,21 +47,16 @@ int task1(void)
 
     printf("Измененные значения\n");
     printf("Введено: c = %c, i = %d, f = %f, d = %g\n", c, i, f, d);
-
-    double num;
     printf("Введите вещественное число: ");
     scanf("%lf", &num);
-    int osn = (int)num; 
-    double ost = num - osn; 
+    osn = (int)num; 
+    ost = num - osn; 
 
     printf("Целая часть: %d\n", osn);
     printf("Дробная часть: %f\n", ost);
 
-    char ch;
     printf("Введите символ: ");
-    
-    scanf("%c", &ch);
-    
+    scanf(" %c", &ch);
     printf("Символ: '%c'\n", ch);
     printf("10-ная СС: %d\n", ch);
     printf("16-ная СС: 0x%X\n", ch);
@@ -62,21 +64,22 @@ int task1(void)
     printf("Введите целое число i: ");
     scanf("%d", &i);
 
-    if (i == 0) {
+    if (i == 0)
+    {
         printf("Ошибка: невозможно делить на 0\n");
     }
-    else {
+    else 
+    {
         double res = 1.0 / i; 
         printf("Результат 1/%d равен: %f\n", i, res);
     }
     return 0;
 }
 
-int task2(void)
+int task2()
 {
     int a = 11;
     int b = 3;
-
     int x;
     float y;
     double z;
@@ -98,18 +101,22 @@ int task2(void)
     return 0;
 }
 
-int task3(void)
+int task3()
 {
     int n;
+    int last, middle, first;
+    int sum, revers;
+    
     printf("Введите трехзначное число: ");
     scanf("%d", &n);
 
-    int last = n % 10;          
-    int middle = (n / 10) % 10; 
-    int first = n / 100;       
+    last = n % 10;          
+    middle = (n / 10) % 10; 
+    first = n / 100;       
 
-    int sum = first + middle + last;
-    int revers = last * 100 + middle * 10 + first;
+    sum = first + middle + last;
+    revers = last * 100 + middle * 10 + first;
+    
     printf("Последняя цифра: %d, первая: %d, сумма цифр: %d, наоборот: %d\n", last, first, sum, revers);
     return 0;
 }
