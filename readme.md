@@ -42,29 +42,34 @@ https://github.com/stzraw/lab-4-VSTU-HW/blob/main/lab_4_schema.png
 #include <stdlib.h>
 #include <locale.h>
 
-int task(void);
+int task();
 
-int main(void) {
+int main()
+{
     setlocale(LC_ALL, ".UTF8");
     task();
     return 0;
 }
 
-int task(void)
+int task()
 {
     int A, B;
+    int vhunger, phunger;
+    
     printf("Дз: Деление пиццы\n");
     printf("Насколько голоден Ваня (A): ");
     scanf("%d", &A);
     printf("Насколько голоден Петя (B): ");
     scanf("%d", &B);
 
-    int vhunger = (A % 2 == 0);
-    int phunger = (B % 2 == 0);
+    vhunger = (A % 2 == 0);
+    phunger = (B % 2 == 0);
 
-    if (vhunger != phunger) {
+    if (vhunger != phunger)
+    {
         printf("Резать пиццу на 4 части.\n");
-    } else {
+    } else
+    {
         printf("Резать пиццу на 6 частей.\n");
     }
     return 0; 
