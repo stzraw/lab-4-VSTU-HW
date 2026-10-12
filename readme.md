@@ -38,44 +38,36 @@ https://github.com/stzraw/lab-4-VSTU-HW/blob/main/lab_4_schema.png
 
 ## 2. Реализация программы
 
+#define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 
-int task();
+
+int task( int A, int B);
 
 int main()
 {
-    setlocale(LC_ALL, ".UTF8");
-    task();
-    return 0;
-}
+    int A,B,pieces;
 
-int task()
-{
-    int A, B;
-    int vhunger, phunger;
-    
+    setlocale(LC_ALL, "RUS");
+
     printf("Дз: Деление пиццы\n");
     printf("Насколько голоден Ваня (A): ");
     scanf("%d", &A);
     printf("Насколько голоден Петя (B): ");
     scanf("%d", &B);
 
-    vhunger = (A % 2 == 0);
-    phunger = (B % 2 == 0);
+    pieces = task(A, B);
+    printf("Резать пиццу на %d\n", pieces);
 
-    if (vhunger != phunger)
-    {
-        printf("Резать пиццу на 4 части.\n");
-    } else
-    {
-        printf("Резать пиццу на 6 частей.\n");
-    }
-    return 0; 
+    return 0;
 }
 
-
+int task(int A, int B)
+{
+    return ((A % 2) != (B % 2) ? 4:6);
+}
 ## 3. Результаты работы программы
 
 Дз: Деление пиццы
