@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include <locale.h>
 
-
-int task( int A, int B);
+int task(int A, int B);
 
 int main()
 {
-    int A,B,pieces;
+    int A, B, pieces;
 
     setlocale(LC_ALL, "RUS");
 
@@ -19,12 +18,16 @@ int main()
     scanf("%d", &B);
 
     pieces = task(A, B);
-    printf("Резать пиццу на %d\n", pieces);
-
+    printf("Резать пиццу на %d кусков\n", pieces);
     return 0;
 }
 
 int task(int A, int B)
 {
-    return ((A % 2) != (B % 2) ? 4:6);
+    int cond;
+    int pieces;
+
+    cond = (A % 2 == 0) != (B % 2 == 0);
+    pieces = 6 - 2 * cond;
+    return pieces;
 }
